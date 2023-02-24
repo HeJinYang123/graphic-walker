@@ -23,6 +23,7 @@ import FilterField from "./fields/filterField";
 import { guardDataKeys } from "./utils/dataPrep";
 import SegmentNav from "./segments/segmentNav";
 import DatasetConfig from "./dataSource/datasetConfig";
+import NLQuery from "./nlq/nlQuery";
 
 export interface IGWProps {
     dataSource?: IRow[];
@@ -132,6 +133,7 @@ const App: React.FC<IGWProps> = (props) => {
                 {segmentKey === ISegmentKey.vis && (
                     <Container style={{ marginTop: "0em", borderTop: "none" }}>
                         <VisualSettings rendererHandler={rendererRef} />
+                        <NLQuery />
                         <div className="md:grid md:grid-cols-12 xl:grid-cols-6">
                             <div className="md:col-span-3 xl:col-span-1">
                                 <DatasetFields />
@@ -181,6 +183,7 @@ const App: React.FC<IGWProps> = (props) => {
                         <DatasetConfig />
                     </Container>
                 )}
+
             </div>
         </div>
     );
